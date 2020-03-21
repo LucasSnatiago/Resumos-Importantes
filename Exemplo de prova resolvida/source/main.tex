@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{mathtools}
+
+\title{Prova AEDs 2}
+\author{Lucas Santiago de Oliveira}
+\date{Março 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Questão 1}
+\begin{description}
+\hspace{10mm} O pior caso: $3n + (\dfrac{n}{2}-1) + (n-7) + \log_2(n-2) + (3n) + (2n^2-1)$.
+
+\hspace{10mm} Em notação: $\mathcal{O}(n^2)$.
+\end{description}
+
+\begin{description}
+\hspace{10mm} O melhor caso: $n + (\dfrac{n}{2}-1) + (n-7) + \log_2(n-2) + n + (2n^2-1)$.
+
+\hspace{10mm} Em notação: $\mathcal{O}(n^2)$.
+\end{description}
+\vspace{10mm}
+\section{Questão 2}
+
+\lstinputlisting{insercoes.java}
+\vspace{10mm}
+
+
+\section{Questão 3}
+
+\lstinputlisting{heap.java}
+\vspace{10mm}
+
+\section{Questão 4}
+
+\lstinputlisting{comparar.java}
+\vspace{10mm}
+
+\end{document}

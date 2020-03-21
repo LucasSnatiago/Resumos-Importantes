@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{codigo}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=codigo}
+
+\title{Resumo sobre somatórios}
+\author{Lucas Santiago de Oliveira}
+\date{Março de 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{O que é somatório}
+\hspace{4mm} O somatório é um símbolo matemático ($\Sigma$) que designa a soma de um conjunto de termos de uma sequência. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=5cm]{Somatorio.png}
+\label{Figura:Exemplo de Somatório}
+\end{figure}
+
+Onde \emph{x} é uma sequência que pode ser calculada, \emph{i} é o índice do somatório, \emph{m} é o valor inicial e \emph{n} é o valor final.
+
+Para exemplificar:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=5cm]{sequencia.png}
+\label{Figura:Exemplo de sequência}
+\end{figure}
+
+\section{Algumas aplicações}
+
+\subsection{Cálculo de média aritmética}
+\hspace{4mm} Somatório pode ser facilmente usado para cálculo de médias aritméticas:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=2cm]{media.png}
+\label{Figura:Exemplo de sequência}
+\end{figure}
+
+Nesse caso a média é calculada da seguinte forma: i começa em 1, n como número de elementos, \emph{x} sendo os valores separadamente.
+
+Para simplificar, usarei alguns valores: 1, 3, 5, 7, 9. Dessa forma, n será 5 (há 5 elementos). \emph{x} no índice 1 é 1, no índice 2 é 3, no índice 3 é 5 e assim por diante. Será somado todos esses elementos, depois será dividido todos eles por $n$ (número de elementos). Dando assim a média entre todos esses termos:
+\newpage
+\hspace{2cm}$X = \frac{1}{n} \sum_{i=1}^{5} x_i$ \hspace{2cm} $x_i =$ \{1, 3, 5, 7, 9\}
+
+\vspace{5mm} Resposta final: $5$
+
+
+\subsection{Uso na computação}
+\hspace{4mm} O principal uso do somatório na computação são os \emph{loops for}.
+\lstinputlisting[language=C]{for.c}
+
+Seguindo do exemplo de código: o comando \emph{for} repete algum conjunto de instruções pelo número de vezes que lhe for pedido. Usando dos conceitos do somatório: o primeiro conjunto de instrução que precisa ser colocado no \emph{for} é o valor inicial, o próximo é a condição de execução (valor final) e, por fim, qual será o quanto será acrescentado no \emph{i} a cada iteração.
+
+\end{document}

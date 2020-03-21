@@ -1,0 +1,218 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{setspace}
+\usepackage{mathtools}
+\usepackage{pgfplots}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{codigo}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=codigo}
+
+\setstretch{1.5}
+\pgfplotsset{width=10cm,compat=1.9}
+
+\title{Questões básicas de AEDs 2}
+\author{Lucas Santiago de Oliveira}
+\date{Março 2020}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Questão 1}
+    a) $2^0 = 1$ \newline
+    b) $2^1 = 2$ \newline
+    c) $2^2 = 4$ \newline
+    d) $2^3 = 8$ \newline
+    e) $2^4 = 16$ \newline
+    f) $2^5 = 32$ \newline
+    g) $2^6 = 64$ \newline
+    h) $2^7 = 128$ \newline
+    i) $2^8 = 256$ \newline
+    j) $2^9 = 512$ \newline
+    k) $2^10 = 1024$ \newline
+    l) $2^11 = 2048$
+
+\section{Questão 2}
+    a) $\log_2 2048 = 11$ \newline
+    b) $\log_2 1024 = 10$ \newline
+    c) $\log_2 512 = 9$ \newline
+    d) $\log_2 256 = 8$ \newline
+    e) $\log_2 128 = 7$ \newline
+    f) $\log_2 64 = 6$ \newline
+    g) $\log_2 32 = 5$ \newline
+    h) $\log_2 16 = 4$ \newline
+    i) $\log_2 8 = 3$ \newline
+    j) $\log_2 4 = 2$ \newline
+    k) $\log_2 2 = 1$ \newline
+    l) $\log_2 1 = 0$
+    
+\section{Questão 3}
+    a) $\ceil{4,01} = 5$ \newline
+    b) $\floor{4,01} = 4$ \newline
+    c) $\ceil{4,99} = 5$ \newline
+    d) $\floor{4,99} = 4$ \newline
+    e) $\log_2 16 = 4$ \newline
+    f) $\ceil{\log_2 16} = 4$ \newline
+    g) $\floor{\log_2 16} = 4$ \newline
+    h) $\log_2 17 = 4.08746284125$ \newline
+    i) $\ceil{\log_2 17} = 5$ \newline
+    j) $\floor{\log_2 17} = 4$ \newline
+    k) $\log_2 15 = 3.90689059561$ \newline
+    l) $\ceil{\log_2 15} = 4$ \newline
+    m) $\floor{\log_2 15} = 3$
+    
+\section{Questão 4}
+    a) 
+\begin{tikzpicture}
+\begin{axis}[xlabel=$x$,ylabel=$y$,
+xmin=-10,xmax=10,ymin=-10,ymax=10, axis lines=center, axis equal]
+\addplot[color=blue,smooth,ultra thick, domain=-10:10] {x};
+\end{axis}
+\end{tikzpicture}
+\newline
+    
+    b) 
+\begin{tikzpicture}
+\begin{axis}[xlabel=$x$,ylabel=$y$,
+xmin=-10,xmax=10,ymin=-10,ymax=10, axis lines=center, axis equal]
+\addplot[color=blue,smooth,ultra thick, domain=-10:10] {x^2};
+\end{axis}
+\end{tikzpicture}
+\newline
+    
+    c) 
+\begin{tikzpicture}
+\begin{axis}[xlabel=$x$,ylabel=$y$,
+xmin=-10,xmax=10,ymin=-10,ymax=10, axis lines=center, axis equal]
+\addplot[color=blue,smooth,ultra thick, domain=-10:10] {x^3};
+\end{axis}
+\end{tikzpicture}
+\newline
+
+    d) 
+\begin{tikzpicture}
+\begin{axis}[xlabel=$x$,ylabel=$y$,
+xmin=-10,xmax=10,ymin=-10,ymax=10, axis lines=center, axis equal]
+\addplot[color=blue,smooth,ultra thick, domain=-10:10] {sqrt(x)};
+\end{axis}
+\end{tikzpicture}
+\newline
+
+    e) 
+\begin{tikzpicture}
+\begin{axis}[xlabel=$x$,ylabel=$y$,
+xmin=-10,xmax=10,ymin=-10,ymax=10, axis lines=center, axis equal]
+\addplot[color=blue,smooth,ultra thick, domain=-10:10] {log2(x)};
+\end{axis}
+\end{tikzpicture}
+\newline
+
+    f) 
+\begin{tikzpicture}
+\begin{axis}[xlabel=$x$,ylabel=$y$,
+xmin=-10,xmax=10,ymin=-10,ymax=10, axis lines=center, axis equal]
+\addplot[color=blue,smooth,ultra thick, domain=-10:10] {3*x^2 + 5*x - 3};
+\end{axis}
+\end{tikzpicture}
+\newline
+
+    g)
+\begin{tikzpicture}
+\begin{axis}[xlabel=$x$,ylabel=$y$,
+xmin=-10,xmax=10,ymin=-10,ymax=10, axis lines=center, axis equal]
+\addplot[color=blue,smooth,ultra thick, domain=-10:10] {-3*x^2+5*x-3};
+\end{axis}
+\end{tikzpicture}
+\newline
+
+    h)
+\begin{tikzpicture}
+\begin{axis}[xlabel=$x$,ylabel=$y$,
+xmin=-10,xmax=10,ymin=-10,ymax=10, axis lines=center, axis equal]
+\addplot[color=blue,smooth,ultra thick, domain=0:10] {x^2};
+\addplot[color=blue,smooth,ultra thick, domain=-10:0] {x^2};
+\end{axis}
+\end{tikzpicture}
+\newline
+
+    i)
+\begin{tikzpicture}
+\begin{axis}[xlabel=$x$,ylabel=$y$,
+xmin=-10,xmax=10,ymin=-10,ymax=10, axis lines=center, axis equal]
+\addplot[color=blue,smooth,ultra thick, domain=-10:10] {5*x^4+2*x^2};
+\end{axis}
+\end{tikzpicture}
+\newline
+
+    j)
+\begin{tikzpicture}
+\begin{axis}[xlabel=$x$,ylabel=$y$,
+xmin=-10,xmax=10,ymin=-10,ymax=10, axis lines=center, axis equal]
+\addplot[color=blue,smooth,ultra thick, domain=-10:10] {x*log2(x)};
+\end{axis}
+\end{tikzpicture}
+\newline
+
+\section{Questão 5}
+\lstinputlisting[language=Java]{pesquisa.java}
+
+\lstinputlisting[language=Java]{pesquisaBinaria.java}
+
+\section{Questão 6}
+\hspace{10mm} O código verifica se a letra 'c' tem o código ASCII  65, 69, 73, 79, 85, 97, 101, 105, 111 ou 117.
+
+\section{Questão 7}
+\hspace{4mm} O primeiro código verifica se a letra de entrada tem o código ASCII  65, 69, 73, 79, 85, 97, 101, 105, 111 ou 117.
+
+Os outros dois códigos transformam o \emph{char} de entrada em minúsculo e verifica se essas letras são vogais.
+    
+\section{Questão 8}
+\hspace{4mm} O primeiro código verifica se o char de entrada é uma letra.
+
+O segundo código verifica se é uma vogal.
+
+\section{Questão 9}
+\lstinputlisting[language=Java]{menos.java}
+
+A primeira função subtrai depois de retornar seu valor. Enquanto, na segunda primeiro será feito a subtração, depois será retornado o valor.
+
+\section{Questão 10}
+\hspace{4mm} O $b$ a cada soma irá mudar de 0 para 1 e de volta para 0. A variável $s$ irá somar 1 até 32767 e irá para -32768. A variável $i$ irá de -32768 até 32767. E, por fim, $l$ de -2147483648 até 2147483647.
+
+\section{Questão 11}
+\hspace{4mm} O uso do operando $>>$ faz multiplicações e divisões por 2. Dessa forma, $23 >> 1$, será 46. Já $23 << 1$ será $\floor{\frac{23}{2}}$, pois divisões que geram resto são ignorados! Deixando o resultado como 11.
+
+\end{document}
