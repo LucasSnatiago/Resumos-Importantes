@@ -1,0 +1,5 @@
+logico eFatorNaoTrivial (N, D)
+    Se N for divisivel por D e D != 1 e D != N
+        retorna verdadeiro
+    Senao
+        retorna falso
