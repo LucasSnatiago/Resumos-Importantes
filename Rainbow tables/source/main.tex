@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{setspace}
+\usepackage{mathtools}
+\usepackage{pgfplots}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage[margin=2cm]{geometry}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{codigo}{
+    numberstyle=\tiny,
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=codigo}
+
+\setstretch{1.5}
+\pgfplotsset{width=10cm,compat=1.9}
+
+\pagenumbering{gobble}
+\clearpage
+\thispagestyle{empty}
+
+\title{Tabelas Arco-Íris - Hash Criptográfico}
+\author{Lucas Santiago de Oliveira}
+\date{Novembro de 2020}
+
+
+
+\begin{document}
+\maketitle
+
+\hspace*{4pt} Ataques de força bruta eram muito comuns em bancos de dados para se obter as senhas dos usuários que estavam lá.
+Com o tempo, os algoritmos criptográficos foram se tornando mais complexos e esse tipo de ataque foi perdendo popularidade para outros.
+Para entender como uma tabela Arco-Íris (\emph{Rainbow Table}) funciona primeiro precisa-se entender como funciona um hash criptográfico moderno
+\emph{(Essa discução ficará para outro documento)}.
+
+Tabelas Arco-Íris foram uma saida rápida para quebrar banco de dados, sem necessidade de grande poder computacional ou tempo. Essas tabelas consistem 
+em precomputar vários conjutos de texto ou senhas comuns previamente e salvar em um arquivo. Assim, caso você precise quebrar alguma senha será apenas
+preciso verificar o hash encontrado no banco com os hashs que estão salvos no arquivo. Para ser mais rápido, há a possibilidade de ordenar a tabela e
+fazer uma simples busca binária. Dessa forma, 1 hash pode ser pesquisado em um banco com 1.000.000 de elementos em apenas 20 testes.
+
+Essa forma de armazenamento de senha se mostrou rapidamente ineficaz e algumas soluções apareceram.
+Para aumentar mais a segurança é adicionado uma senha gerada aleatoriamente no inicio da senha do usuário antes de colocar a senha sobre alguma função de hash além de passar
+a senha por essa função mais de uma vez. O valor da senha gerada aleatoriamente e do número de ciclos do hash podem ser salvos no arquivo sem nenhum problema.
+A dificuldade computacional de pegar todas as senhas mais comuns do mundo adicionar a senha aleatória do banco de dados mais o número de ciclos torna absurdamente caro
+que um banco de dados vazado seja comprometido rapidamente.
+
+
+\end{document}
